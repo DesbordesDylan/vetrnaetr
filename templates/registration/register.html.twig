@@ -1,0 +1,21 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+	<div class="divTitle divForm">
+
+		<h2>Inscription</h2>
+
+		<div>
+			{{ form_start(registrationForm) }}
+
+			{{ form_row(registrationForm.email) }}
+			{{ form_row(registrationForm.plainPassword) }}
+
+			<div>
+				<button class="btn-dark">Valider</button>
+				{{ form_end(registrationForm) }}
+			</div>
+		</div>
+
+	{% endblock %}

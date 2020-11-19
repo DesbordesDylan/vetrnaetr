@@ -1,0 +1,33 @@
+{% extends "base.html.twig" %}
+
+
+{% block body %}
+	<a href="{{ path('app_login') }}"><img class="mainPageLogin" src="{{asset('assets/images/login.png')}}"></a>
+{% if is_granted('ROLE_ADMIN') %}
+	<a href="{{ path('album_create') }}"><img class="mainPageAdd" src="{{asset('assets/images/add.png')}}"></a>
+{% endif %}
+	<div class="location">
+
+		{% for alb in album %}
+			<div class="ratioImage">
+				<a href="{{ path('album_view', {id: alb.id}) }}"><img class="responsiveImage" src="{{asset('assets/images/'~ alb.brochure)}}"></a>
+
+				<div class="information">
+					<ul>
+						<li class="titleList centerList">{{ alb.title }}</li>
+						<li class="centerList">{{ alb.description }}</li>
+						<li class="centerList">{{ alb.support }}</li>
+						<li class="centerList">{{ alb.price }}</li>
+					</ul>
+				</div>
+			</div>
+		{% endfor %}
+
+	</div>
+	<footer>
+		<div class="footer">
+			<p class="label">Label situé en France. Prix en Euro (hors frais de port)</p>
+			<a href="{{ path('contact') }}"><p class="contact">Nous contacter</p></a>
+		</div>
+	</footer>
+{% endblock %}

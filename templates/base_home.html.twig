@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>
+			{% block title %}VetrNaetr
+			{% endblock %}
+		</title>
+
+		<link rel="stylesheet" href="{{asset('assets/css/style.css')}}">
+		<link rel="stylesheet" href="{{asset('assets/css/reset.css')}}">
+		<body>
+{% block body %}{% endblock %}{% block javascripts %}{% endblock %}
+			</body>
+		</html>

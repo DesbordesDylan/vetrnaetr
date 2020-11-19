@@ -1,0 +1,51 @@
+{% extends "base_contact.html.twig" %}
+
+{% block body %}
+
+<a href="{{ path('mainpage') }}"><img class="backSize" src="{{ asset('assets/images/back.png') }}"></a>
+<div class="container">
+
+		{{ form_start(form) }}
+
+		<div class="row">
+			<div class="col">
+				{{ form_label(form.lastname, 'Nom') }}
+				{{ form_widget(form.lastname, {'attr':{'class':'form-control'}}) }}
+				{{ form_errors(form.lastname) }}
+			</div>
+			<div class="col">
+				{{ form_label(form.firstname, 'Prénom') }}
+				{{ form_widget(form.firstname, {'attr':{'class':'form-control'}}) }}
+				{{ form_errors(form.firstname) }}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				{{ form_label(form.phone, 'Téléphone') }}
+				{{ form_widget(form.phone, {'attr':{'class':'form-control'}}) }}
+				{{ form_errors(form.phone) }}
+			</div>
+			<div class="col">
+				{{ form_label(form.email, 'Email') }}
+				{{ form_widget(form.email, {'attr':{'class':'form-control'}}) }}
+				{{ form_errors(form.email) }}
+			</div>
+		</div>
+		<div class="row">
+			<div class="col">
+				{{ form_label(form.message, 'Message') }}
+				{{ form_widget(form.message, {'attr':{'class':'form-control', 'rows': '3'}}) }}
+				{{ form_errors(form.message) }}
+			</div>
+		</div>
+
+		<div class="row">
+			<div class="col">
+				<button>Envoyer</button>
+			</div>
+		</div>
+		{{ form_end(form)}}
+	</div>
+
+
+{% endblock %}

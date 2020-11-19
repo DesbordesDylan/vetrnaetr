@@ -1,0 +1,27 @@
+{% extends "base.html.twig" %}
+
+{% block body %}
+
+	<a href="{{ path('mainpage') }}"><img class="backSize" src="{{ asset('assets/images/back.png') }}"></a>
+
+		<div class="centerCreate">
+
+			<h2 class="centerH2">
+				Ajouter une musique
+			</h2>
+
+			{{ form_start(formView) }}
+			<div class="row">
+				<div class="col">
+					{{ form_label(formView.title, 'Titre de la musique') }}
+					{{ form_widget(formView.title, {'attr':{'class':'inputSong'}}) }}
+					{{ form_errors(formView.title) }}
+				</div>
+				<div class="col">
+					{{ form_label(formView.album, 'Album correspondant à la musique') }}
+					{{ form_widget(formView.album, {'attr':{'class':'albumMusic'}}) }}
+					{{ form_errors(formView.album) }}
+				</div>
+			</div>
+			{{ form_end(formView) }}
+		{% endblock %}
